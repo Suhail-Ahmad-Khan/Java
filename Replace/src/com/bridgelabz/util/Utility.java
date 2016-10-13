@@ -8,6 +8,8 @@ import java.lang.ArrayIndexOutOfBoundsException;
 
 public class Utility {
 	BufferedReader br;
+	char[] arr_str;
+	boolean flag;
 
 	// CREATING CONSTRUCTOR WITH SAME NAME AS CLASS
 	public Utility() {
@@ -62,5 +64,37 @@ public class Utility {
 			System.out.println(e);
 		}
 		return "";
+	}
+
+	// CONVERTING TO UPPERCASE
+	public String con_upper(String str) {
+		try {
+			return str.toUpperCase();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+
+	// SORTING THE ARRAY
+	public char[] sort_array(char[] arr_str) {
+		try {
+			Arrays.sort(arr_str);
+			return arr_str;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return arr_str;
+	}
+
+	// SET OR RESET THE FLAG
+	public boolean set_flag(char[] arr_str1, char[] arr_str2) {
+		try {
+			flag = Arrays.equals(arr_str1, arr_str2);
+			return flag;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
 	}
 }
