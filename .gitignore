@@ -3,7 +3,7 @@ bin
 .metadata
 .recommenders
 RemoteSystemsTempFiles
-
+.settings
 *.class
 
 # Mobile Tools for Java (J2ME)
