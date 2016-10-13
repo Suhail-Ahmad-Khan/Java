@@ -61,7 +61,7 @@ public class Anagram {
 					return;
 				}
 
-				//CHECKING ANGRAM CONDITION
+				//CHECKING ANAGRAM CONDITION
 				if(flag)
 					System.out.println("it is an ANAGRAM");
 				else
