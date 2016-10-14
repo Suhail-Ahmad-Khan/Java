@@ -104,6 +104,7 @@ public class Utility {
 		return false;
 	}
 	
+	// READING FROM A FILE AND RETURNING AN ARRAYLIST
 	public ArrayList<String> read_file(String filepath)
 	{
 		try {
