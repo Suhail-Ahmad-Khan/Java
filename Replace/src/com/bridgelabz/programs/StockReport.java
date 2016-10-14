@@ -13,8 +13,6 @@ e. Hint -> Create Stock and Stock Portfolio Class holding the list of Stocks rea
 
 package com.bridgelabz.programs;
 
-import java.util.Arrays;
-
 import com.bridgelabz.util.Utility;
 
 class Stock {

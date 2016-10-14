@@ -1,15 +1,21 @@
 package com.bridgelabz.util;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.lang.ArrayIndexOutOfBoundsException;
+import java.io.File;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.FileNotFoundException;
 
 public class Utility {
 	BufferedReader br;
 	char[] arr_str;
 	boolean flag;
+	Scanner s;
 
 	// CREATING CONSTRUCTOR WITH SAME NAME AS CLASS
 	public Utility() {
@@ -96,5 +102,21 @@ public class Utility {
 			System.out.println(e);
 		}
 		return false;
+	}
+	
+	public ArrayList<String> read_file(String filepath)
+	{
+		try {
+			s = new Scanner(new File(filepath));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ArrayList<String> list = new ArrayList<String>();
+		while (s.hasNext()){
+		    list.add(s.next());
+		}
+		s.close();
+		return list;
 	}
 }

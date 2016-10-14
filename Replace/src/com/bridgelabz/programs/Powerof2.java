@@ -9,8 +9,6 @@ d. O/P -> Print the year is a Leap Year or not.
 
 package com.bridgelabz.programs;
 
-import com.bridgelabz.util.Utility;
-
 public class Powerof2 {
 
 	public static void main(String[] args) {
