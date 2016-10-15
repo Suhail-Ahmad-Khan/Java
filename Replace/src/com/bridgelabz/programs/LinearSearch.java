@@ -10,35 +10,17 @@ d. O/P -> Print the result if the word is found or not
 package com.bridgelabz.programs;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import com.bridgelabz.util.Utility;
 
-public class BinarySearch {
-
-	public static String binsearch(ArrayList<String> my_list, String str, int min, int max) {
-		String str1, str2;
-		str1 = "STRING FOUND";
-		str2 = "STRING NOT FOUND";
-		int mid = (max + min) / 2;
-		if (min > max)
-			return str2;
-		if (my_list.get(mid).equals(str)) {
-			return str1;
-		} else if (my_list.get(mid).compareTo(str) > 0) {
-			return binsearch(my_list, str, min, mid - 1);
-		} else {
-			return binsearch(my_list, str, mid + 1, max);
-		}
-	}
+public class LinearSearch {
 
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int min = 0, max, mid;
 		Utility u = new Utility();
 		ArrayList<String> my_list;
-		String str, str1, filepath;
+		String str, filepath;
 		System.out.print("Enter file path: ");
 		filepath = u.inputString();
 		System.out.print("Enter word to search: ");
@@ -46,10 +28,11 @@ public class BinarySearch {
 
 		// COMPUTATION
 		my_list = u.read_file(filepath);
-		max = my_list.size();
-		Collections.sort(my_list);
-		str1 = binsearch(my_list, str, min, max);
-		System.out.println(str1);
-	}
+		if (my_list.contains(str))
+			System.out.print("String is FOUND");
+		else
+			System.out.print("String is NOT FOUND");
 
+	}
 }
+

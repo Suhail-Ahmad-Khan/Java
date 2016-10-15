@@ -11,10 +11,6 @@ package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
 
-class countdown {
-
-}
-
 public class Stopwatch {
 
 	public static void main(String[] args) {
@@ -25,7 +21,6 @@ public class Stopwatch {
 		double start, stop, elapsed;
 		System.out.print("Enter value of n: ");
 		n = u.inputInteger();
-		countdown c = new countdown();
 
 		// COMPUTATION
 		start = u.start_time();
