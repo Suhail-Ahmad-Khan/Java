@@ -16,6 +16,7 @@ public class Utility {
 	char[] arr_str;
 	boolean flag;
 	Scanner s;
+	double start, stop;
 
 	// CREATING CONSTRUCTOR WITH SAME NAME AS CLASS
 	public Utility() {
@@ -103,10 +104,9 @@ public class Utility {
 		}
 		return false;
 	}
-	
+
 	// READING FROM A FILE AND RETURNING AN ARRAYLIST
-	public ArrayList<String> read_file(String filepath)
-	{
+	public ArrayList<String> read_file(String filepath) {
 		try {
 			s = new Scanner(new File(filepath));
 		} catch (FileNotFoundException e) {
@@ -114,10 +114,21 @@ public class Utility {
 			e.printStackTrace();
 		}
 		ArrayList<String> list = new ArrayList<String>();
-		while (s.hasNext()){
-		    list.add(s.next());
+		while (s.hasNext()) {
+			list.add(s.next());
 		}
 		s.close();
 		return list;
+	}
+
+	// CALCULATING THE START AND STOP TIME FOR STOPWATCH TIMER
+	public double start_time() {
+		start = System.currentTimeMillis();
+		return start;
+	}
+
+	public double stop_time() {
+		stop = System.currentTimeMillis();
+		return stop;
 	}
 }

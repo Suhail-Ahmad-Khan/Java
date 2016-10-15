@@ -12,17 +12,7 @@ package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
 class countdown {
-	double start, stop, elapsed;
 
-	public void start_time() {
-		start = System.currentTimeMillis();
-	}
-
-	public double elapsed_time() {
-		stop = System.currentTimeMillis();
-		elapsed = (stop - start) / 1000.0;
-		return elapsed;
-	}
 }
 
 public class Stopwatch {
@@ -32,16 +22,20 @@ public class Stopwatch {
 		// INITIALIZATION
 		Utility u = new Utility();
 		int n, sum = 0;
-		double time;
+		double start, stop, elapsed;
 		System.out.print("Enter value of n: ");
 		n = u.inputInteger();
 		countdown c = new countdown();
 
 		// COMPUTATION
-		c.start_time();
-		for (int i = 1; i <= n; i++)
+		start = u.start_time();
+		for (int i = 1; i <= n; i++) {
 			sum = sum + i;
-		time = c.elapsed_time();
-		System.out.print("Total time elapsed during computation: " + time);
+			System.out.println("Sum: " + sum + " ");
+		}
+		stop = u.stop_time();
+		elapsed = (stop - start) / 1000.0;
+		System.out.println("");
+		System.out.print("Total time elapsed during computation: " + elapsed);
 	}
 }
