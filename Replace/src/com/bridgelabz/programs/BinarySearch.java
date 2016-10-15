@@ -35,7 +35,7 @@ public class BinarySearch {
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int min = 0, max, mid;
+		int min = 0, max;
 		Utility u = new Utility();
 		ArrayList<String> my_list;
 		String str, str1, filepath;
@@ -51,5 +51,4 @@ public class BinarySearch {
 		str1 = binsearch(my_list, str, min, max);
 		System.out.println(str1);
 	}
-
 }
