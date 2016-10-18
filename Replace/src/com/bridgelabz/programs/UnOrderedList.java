@@ -15,33 +15,12 @@ package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class UnOrderedList {
 
-	static Scanner s;
-
-	public static LinkedList<String> read_file(String filepath) {
-		try {
-			s = new Scanner(new File(filepath));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		LinkedList<String> list = new LinkedList<String>();
-		while (s.hasNext()) {
-			list.add(s.next());
-		}
-		s.close();
-		return list;
-	}
-
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException{
 
 		// INITIALIZATION
 		Utility u = new Utility();
@@ -53,7 +32,7 @@ public class UnOrderedList {
 		str = u.inputString();
 
 		// COMPUTATION
-		my_list = read_file(filepath);
+		my_list = u.read_file1(filepath);
 		System.out.println(my_list.size());
 		if (my_list.contains(str)) {
 			my_list.remove(str);
@@ -64,12 +43,6 @@ public class UnOrderedList {
 		}
 		
 		//WRITING TO THE FILE
-		FileWriter writer = new FileWriter(filepath);
-		for(int i = 0; i<my_list.size(); i++)
-		{
-			writer.write(my_list.get(i) +" "); 
-		      writer.flush();
-		}
-		writer.close();
+		u.WriteFile(filepath, my_list);
 	}
 }

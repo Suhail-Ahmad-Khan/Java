@@ -2,14 +2,14 @@ package com.bridgelabz.util;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.lang.ArrayIndexOutOfBoundsException;
+import java.util.LinkedList;
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.FileNotFoundException;
 
 public class Utility {
 	BufferedReader br;
@@ -110,7 +110,6 @@ public class Utility {
 		try {
 			s = new Scanner(new File(filepath));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		ArrayList<String> list = new ArrayList<String>();
@@ -119,6 +118,31 @@ public class Utility {
 		}
 		s.close();
 		return list;
+	}
+
+	// READING FROM A FILE AND RETURNING A LINKEDLIST
+	public LinkedList<String> read_file1(String filepath) {
+		try {
+			s = new Scanner(new File(filepath));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		LinkedList<String> list = new LinkedList<String>();
+		while (s.hasNext()) {
+			list.add(s.next());
+		}
+		s.close();
+		return list;
+	}
+
+	// WRITING IN A FILE FROM A LINKED LIST
+	public void WriteFile(String filepath, LinkedList<String> my_list) throws IOException {
+		FileWriter writer = new FileWriter(filepath);
+		for (int i = 0; i < my_list.size(); i++) {
+			writer.write(my_list.get(i) + " ");
+			writer.flush();
+		}
+		writer.close();
 	}
 
 	// CALCULATING THE START AND STOP TIME FOR STOPWATCH TIMER
