@@ -10,7 +10,7 @@ c. Logic -> Play till the gambler is broke or has won
 d. O/P -> Print Number of Wins and Percentage of Win and Loss.
 */
 
-package com.bridgelabz.util;
+package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
 

@@ -151,9 +151,7 @@ public class GenericLinkedList<T> {
 						.parseInt((String) node.getValue()) > (Integer.parseInt((String) node.getNext().getValue()))) {
 
 					swap = node.getNext().getValue();
-					System.out.println(size);
 					node.getNext().setValue(node.getValue());
-					System.out.println(size+1);
 					node.setValue(swap);
 				}
 				node = node.getNext();
