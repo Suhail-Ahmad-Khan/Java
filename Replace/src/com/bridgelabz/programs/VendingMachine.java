@@ -42,7 +42,7 @@ public class VendingMachine {
 		System.out.println("Minimum notes required: " + FinalCnt);
 
 		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i] + " : " + cnt[i]);
+			System.out.println(arr[i] + " : " + my_cnt[i]);
 		}
 
 	}
