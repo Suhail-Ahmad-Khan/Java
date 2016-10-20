@@ -17,10 +17,8 @@ d. O/P -> Print the Modified Message.
 package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -46,7 +44,7 @@ public class Regex {
 		System.out.print("Enter Your Full Name: ");
 		String fullName = u.inputString();
 
-		// Taking name and checking for the conditions
+		// Taking name and checking the conditions
 		boolean checkName = Pattern.matches("[A-Z][a-zA-Z]*[\\s][A-Z][a-zA-Z]*", fullName);
 
 		if (checkName) {
@@ -57,7 +55,7 @@ public class Regex {
 			System.exit(0);
 		}
 
-		// Taking Phone number and checking for the conditions
+		// Taking Phone number and checking the conditions
 		System.out.print("Enter Mobile Number: ");
 		phoneNumber = u.inputString();
 
