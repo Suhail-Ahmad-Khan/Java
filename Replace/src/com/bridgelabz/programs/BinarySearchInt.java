@@ -1,10 +1,9 @@
 
 package com.bridgelabz.programs;
 
+import com.bridgelabz.util.Utility;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import com.bridgelabz.util.Utility;
 
 public class BinarySearchInt {
 
