@@ -11,7 +11,6 @@ d. O/P -> The List of Numbers to a File.
 package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
-
 import java.io.IOException;
 
 import com.bridgelabz.util.GenericLinkedList;

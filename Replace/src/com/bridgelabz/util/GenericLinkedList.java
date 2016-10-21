@@ -51,6 +51,7 @@ public class GenericLinkedList<T> {
 	}
 
 	// READING FROM A FILE IN GENERIC LINKED LIST
+	@SuppressWarnings("unchecked")
 	public GenericLinkedList<T> ReadFile(String filepath) {
 		try {
 			s = new Scanner(new File(filepath));

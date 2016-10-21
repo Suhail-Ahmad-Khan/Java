@@ -22,7 +22,7 @@ public class InventoryManager {
 	public static void main(String[] args) throws IOException {
 
 		JSONUtility u = new JSONUtility();
-		// u.CreateJSONFile();
-		u.ReadFromJSONFile();
+		 u.CreateJSONFile();
+		//u.ReadFromJSONFile();
 	}
 }
