@@ -17,6 +17,7 @@ import com.bridgelabz.util.Queue;
 
 public class SimulateBank {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 
 		// INITIALIZATION

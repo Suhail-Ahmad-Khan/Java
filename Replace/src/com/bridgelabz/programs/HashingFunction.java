@@ -41,8 +41,8 @@ public class HashingFunction {
 
 		System.out.print("Enter no. of slots: ");
 		n = u.inputInteger();
-		HashMap<Integer, LinkedList<Integer>> map1 = new HashMap();
-		HashMap<Integer, LinkedList<Integer>> map2 = new HashMap();
+		HashMap<Integer, LinkedList<Integer>> map1 = new HashMap<Integer, LinkedList<Integer>>();
+		HashMap<Integer, LinkedList<Integer>> map2 = new HashMap<Integer, LinkedList<Integer>>();
 		LinkedList<Integer>[] list = new LinkedList[n];
 
 		// COMPUTATION
@@ -73,6 +73,7 @@ public class HashingFunction {
 			map2.put(j, list1);
 		}
 
+		// WRITING INTO A FILE
 		System.out.print("Enter filepath to write into: ");
 		FilePath = u.inputString();
 		FileWriter writer = new FileWriter(FilePath);

@@ -11,7 +11,7 @@ import com.bridgelabz.util.Utility;
 public class Flipcoin {
 
 	public static void main(String[] args) {
-		
+
 		// INITIALIZATION
 		int n, h_cnt = 0, t_cnt = 0;
 		double heads, tails;
@@ -30,8 +30,8 @@ public class Flipcoin {
 				h_cnt++;
 		}
 
-		heads = h_cnt / (double) n * 100;
-		tails = t_cnt / (double) n * 100;
+		heads = h_cnt / n * 100.0;
+		tails = t_cnt / n * 100.0;
 		System.out.println("Percentage of heads: " + heads + "%");
 		System.out.println("Percentage of tails: " + tails + "%");
 
