@@ -17,21 +17,19 @@ public class Harmonic {
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		double result = 0, num = 0, j;
-		int n;
+		double Result = 0, Harmonic = 0;
+		int Number;
 		Utility u = new Utility();
 
 		// INPUT DATA
 		System.out.print("enter the harmonic you want to find: ");
-		n = u.inputInteger();
+		Number = u.inputInteger();
 
 		// COMPUTATION
-		for (j = 1; j <= n; j++) {
-			num = num + (1 / j);
-			result = num;
+		for (double j = 1; j <= Number; j++) {
+			Harmonic = Harmonic + (1 / j);
+			Result = Harmonic;
 		}
-		System.out.println("the value of harmonic no. " + n + " is: " + result);
-
+		System.out.println("the value of harmonic no. " + Number + " is: " + Result);
 	}
-
 }

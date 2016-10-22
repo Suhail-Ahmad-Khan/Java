@@ -19,50 +19,48 @@ public class Gambler {
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int stake, bet, broke, goal, trial;
+		int Stake, Bet, Broke, Goal, Trial;
 		Utility u = new Utility();
 
 		// INPUT DATA
 		System.out.print("enter deposit: ");
-		stake = u.inputInteger();
+		Stake = u.inputInteger();
 
 		System.out.print("enter bet: ");
-		bet = u.inputInteger();
+		Bet = u.inputInteger();
 
 		System.out.print("enter broke limit: ");
-		broke = u.inputInteger();
+		Broke = u.inputInteger();
 
 		System.out.print("enter goal limit: ");
-		goal = u.inputInteger();
+		Goal = u.inputInteger();
 
 		System.out.print("enter number of trials: ");
-		trial = u.inputInteger();
+		Trial = u.inputInteger();
 
 		// COMPUTATIONAL LOGIC
-		int win = 0, loss = 0;
+		int Win = 0, Loss = 0;
 
-		for (int i = 1; i <= trial; i++) {
-			int cash = stake;
-			while (cash >= 0 || cash <= goal) {
+		for (int i = 1; i <= Trial; i++) {
+			int Cash = Stake;
+			while (Cash >= 0 || Cash <= Goal) {
 				if (Math.random() < 0.5)
-					cash = cash + bet;
+					Cash = Cash + Bet;
 				else
-					cash = cash - bet;
+					Cash = Cash - Bet;
 
-				if (cash == goal) {
-					win++;
+				if (Cash == Goal) {
+					Win++;
 					break;
-				} else if (cash == broke) {
-					loss++;
+				} else if (Cash == Broke) {
+					Loss++;
 					break;
 				} else
 					continue;
 			}
 		}
-		System.out.println("Total no. of wins: " + win);
-		System.out.println("Percentage of Wins: " + 100.0 * win / trial);
-		System.out.println("Percentage of Loss: " + 100.0 * loss / trial);
-
+		System.out.println("Total no. of wins: " + Win);
+		System.out.println("Percentage of Wins: " + 100.0 * Win / Trial);
+		System.out.println("Percentage of Loss: " + 100.0 * Loss / Trial);
 	}
-
 }

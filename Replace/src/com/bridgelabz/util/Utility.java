@@ -64,9 +64,9 @@ public class Utility {
 	}
 
 	// REMOVING BLANK SPACES
-	public String remove_spaces(String str) {
+	public String RemoveSpaces(String Input) {
 		try {
-			return str.replaceAll("\\s", "");
+			return Input.replaceAll("\\s", "");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -74,9 +74,9 @@ public class Utility {
 	}
 
 	// CONVERTING TO UPPERCASE
-	public String con_upper(String str) {
+	public String ConvertUppercase(String Input) {
 		try {
-			return str.toUpperCase();
+			return Input.toUpperCase();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -84,20 +84,20 @@ public class Utility {
 	}
 
 	// SORTING THE ARRAY
-	public char[] sort_array(char[] arr_str) {
+	public char[] SortArray(char[] Array) {
 		try {
-			Arrays.sort(arr_str);
+			Arrays.sort(Array);
 			return arr_str;
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return arr_str;
+		return Array;
 	}
 
 	// SET OR RESET THE FLAG
-	public boolean set_flag(char[] arr_str1, char[] arr_str2) {
+	public boolean SetFlag(char[] Array1, char[] Array2) {
 		try {
-			flag = Arrays.equals(arr_str1, arr_str2);
+			flag = Arrays.equals(Array1, Array2);
 			return flag;
 		} catch (Exception e) {
 			System.out.println(e);

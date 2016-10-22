@@ -13,24 +13,23 @@ public class Replace {
 
 	public static void main(String[] args) {
 		// INITIALIZATION
-		String str1, str2, str3, str4;
+		String Input, Replace, NewName, Output;
 		Utility u = new Utility();
 
 		// INPUT DATA
 		System.out.print("Enter String: ");
-		str1 = u.inputString();
+		Input = u.inputString();
 
 		System.out.print("Enter name you want to replace: ");
-		str2 = u.inputString();
+		Replace = u.inputString();
 
 		System.out.print("Enter name you want to replace with: ");
-		str3 = u.inputString();
+		NewName = u.inputString();
 
 		// COMPUTATION
-		str4 = str1.replace(str2, str3);
+		Output = Input.replace(Replace, NewName);
 
 		// OUTPUT
-		System.out.println("New String: " + str4);
+		System.out.println("New String: " + Output);
 	}
-
 }

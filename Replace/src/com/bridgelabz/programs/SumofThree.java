@@ -7,6 +7,7 @@ c. Logic -> Find distinct triples (i, j, k) such that a[i] + a[j] + a[k] = 0
 d. O/P -> One Output is number of distinct triplets as well as the second output is to
    print the distinct triplets.
 */
+
 package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
@@ -16,32 +17,32 @@ public class SumofThree {
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int cnt = 0, min, max;
+		int Count = 0, MinValue, MaxValue;
 		Utility u = new Utility();
 		System.out.print("Enter the min range value: ");
-		min = u.inputInteger();
+		MinValue = u.inputInteger();
 		System.out.print("Enter the max range value: ");
-		max = u.inputInteger();
+		MaxValue = u.inputInteger();
 
-		int[] arr = new int[Math.abs(max) + Math.abs(min)];
+		int[] Array = new int[Math.abs(MaxValue) + Math.abs(MinValue)];
 
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = min + (int) (Math.random() * ((max - min) + 1));
-			System.out.print(arr[i] + "\t");
+		for (int i = 0; i < Array.length; i++) {
+			Array[i] = MinValue + (int) (Math.random() * ((MaxValue - MinValue) + 1));
+			System.out.print(Array[i] + "\t");
 		}
 		System.out.println("");
 
 		// COMPUTATION
-		for (int i = 0; i < arr.length - 2; i++) {
-			for (int j = i + 1; j < arr.length - 1; j++) {
-				for (int k = j + 1; k < arr.length; k++) {
-					if (arr[i] + arr[j] + arr[k] == 0) {
-						cnt++;
-						System.out.println("Triplet is: " + "\t" + arr[i] + "\t" + arr[j] + "\t" + arr[k]);
+		for (int i = 0; i < Array.length - 2; i++) {
+			for (int j = i + 1; j < Array.length - 1; j++) {
+				for (int k = j + 1; k < Array.length; k++) {
+					if (Array[i] + Array[j] + Array[k] == 0) {
+						Count++;
+						System.out.println("Triplet is: " + "\t" + Array[i] + "\t" + Array[j] + "\t" + Array[k]);
 					}
 				}
 			}
 		}
-		System.out.println("Total no. of triplets is: " + cnt);
+		System.out.println("Total no. of triplets is: " + Count);
 	}
 }

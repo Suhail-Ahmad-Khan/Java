@@ -14,31 +14,30 @@ package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
 
-class generate {
-	public static void compute(int n) {
-		int arr[] = new int[n];
-		int cnt = 0;
+class Generate {
+
+	public static void Compute(int n) {
+		int Coupon[] = new int[n];
+		int Count = 0;
 
 		// LOGICAL COMPUTATION
 		for (int i = 0; i < n; i++) {
-			int x = (int) (Math.random() * n + 1);
-			System.out.print(x + "\t");
-			cnt++;
-			arr[i] = x;
+			int Number = (int) (Math.random() * n + 1);
+			System.out.print(Number + "\t");
+			Count++;
+			Coupon[i] = Number;
 			for (int j = 0; j < i; j++) {
-				if (arr[j] == x) {
+				if (Coupon[j] == Number) {
 					i--;
 					break;
 				}
 			}
 		}
-
 		System.out.println("");
 		for (int i = 0; i < n; i++)
-			System.out.print(arr[i] + "\t");
+			System.out.print(Coupon[i] + "\t");
 		System.out.println("");
-		System.out.println("total random number needed to have all distinct numbers: " + cnt);
-
+		System.out.println("total random number needed to have all distinct numbers: " + Count);
 	}
 }
 
@@ -47,15 +46,14 @@ public class Coupon {
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int n;
+		int Size;
 		Utility u = new Utility();
 
 		// INPUT VALUES
 		System.out.print("enter the size of array: ");
-		n = u.inputInteger();
+		Size = u.inputInteger();
 
 		// GENERATING OUTPUT THROUGH STATIC FUNCTION
-		generate.compute(n);
-
+		Generate.Compute(Size);
 	}
 }
