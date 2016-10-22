@@ -13,37 +13,37 @@ package com.bridgelabz.programs;
 
 public class GuessingGame {
 
-	static int cnt = 0;
+	static int Count = 0;
 
 	// BINARY SEARCH STRING
-	public static int BinarySearch(int num, int min, int max) {
-		int mid = (max + min) / 2;
-		if (min > max)
-			return cnt;
-		if (mid == num) {
-			cnt++;
-			return cnt;
-		} else if (mid < num) {
-			cnt++;
-			return BinarySearch(num, min, mid - 1);
+	public static int BinarySearch(int Number, int MinValue, int MaxValue) {
+		int MidValue = (MaxValue + MinValue) / 2;
+		if (MinValue > MaxValue)
+			return Count;
+		if (MidValue == Number) {
+			Count++;
+			return Count;
+		} else if (MidValue < Number) {
+			Count++;
+			return BinarySearch(Number, MinValue, MidValue - 1);
 		} else {
-			cnt++;
-			return BinarySearch(num, mid + 1, max);
+			Count++;
+			return BinarySearch(Number, MidValue + 1, MaxValue);
 		}
 	}
 
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int cnt, min = 0, max, num;
+		int Count, MinValue = 0, MaxValue, Number;
 
 		// INPUT DATA IN LIST
-		num = Integer.parseInt(args[0]);
-		max = Integer.parseInt(args[0]) - 1;
+		Number = Integer.parseInt(args[0]);
+		MaxValue = Integer.parseInt(args[0]) - 1;
 
 		// COMPUTATION
-		cnt = BinarySearch(num, min, max);
+		Count = BinarySearch(Number, MinValue, MaxValue);
 		System.out.println("Your input was: " + args[0]);
-		System.out.println("Total no of trials to search: " + cnt);
+		System.out.println("Total no of trials to search: " + Count);
 	}
 }

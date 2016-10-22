@@ -16,40 +16,41 @@ public class InsertionSort {
 
 		// INITIALIZATION
 		Utility u = new Utility();
-		int n;
+		int Size;
 
 		System.out.print("Enter the size of array: ");
-		n = u.inputInteger();
-		String[] arr = new String[n];
+		Size = u.inputInteger();
+		String[] Array = new String[Size];
 
 		// INPUT STRING DATA
 		System.out.print("Enter String Array: ");
-		for (int i = 0; i < arr.length; i++)
-			arr[i] = u.inputString();
+		for (int i = 0; i < Array.length; i++)
+			Array[i] = u.inputString();
 
 		// DISPLAY STRING DATA
 		System.out.print("Input String Array is : ");
-		for (int i = 0; i < arr.length; i++)
-			System.out.print(arr[i] + "\t");
+		for (int i = 0; i < Array.length; i++)
+			System.out.print(Array[i] + "\t");
 
 		// COMPUTATION
 		String key;
-		for (int j = 1; j < arr.length; j++) {
-			key = arr[j];
+		for (int j = 1; j < Array.length; j++) {
+			key = Array[j];
 			int i = j - 1;
 			while (i >= 0) {
-				if (key.compareTo(arr[i]) > 0) {
+				if (key.compareTo(Array[i]) > 0) {
 					break;
 				}
-				arr[i + 1] = arr[i];
+				Array[i + 1] = Array[i];
 				i--;
 			}
-			arr[i + 1] = key;
+			Array[i + 1] = key;
 		}
+		
 		// DISPLAY STRING DATA
 		System.out.println("");
 		System.out.print("Output String Array is: ");
-		for (int i = 0; i < arr.length; i++)
-			System.out.print(arr[i] + "\t");
+		for (int i = 0; i < Array.length; i++)
+			System.out.print(Array[i] + "\t");
 	}
 }

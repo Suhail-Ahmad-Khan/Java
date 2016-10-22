@@ -14,37 +14,35 @@ public class BubbleSort {
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int n;
+		int Size;
 		Utility u = new Utility();
-		ArrayList<Integer> my_intlist = new ArrayList<Integer>();
+		ArrayList<Integer> MyList = new ArrayList<Integer>();
 		System.out.print("Enter size of list: ");
-		n = u.inputInteger();
+		Size = u.inputInteger();
 
 		// INPUT DATA IN LIST
-		System.out.println("Enter " + n + " numbers");
-		for (int i = 1; i <= n; i++) {
+		System.out.println("Enter " + Size + " numbers");
+		for (int i = 1; i <= Size; i++) {
 			System.out.print("Enter number " + i + ": ");
-			// u.inputInteger();
-			my_intlist.add(u.inputInteger());
+			MyList.add(u.inputInteger());
 		}
 
 		// DISPLAY THE LIST
-		System.out.println("The unsorted list is: " + my_intlist);
+		System.out.println("The unsorted list is: " + MyList);
 
 		// COMPUTATION
-		int temp;
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = i + 1; j < n; j++) {
-				if (my_intlist.get(i) > my_intlist.get(j)) {
-					temp = my_intlist.get(i);
-					my_intlist.set(i, my_intlist.get(j));
-					my_intlist.set(j, temp);
-
+		int Temp;
+		for (int i = 0; i < Size - 1; i++) {
+			for (int j = i + 1; j < Size; j++) {
+				if (MyList.get(i) > MyList.get(j)) {
+					Temp = MyList.get(i);
+					MyList.set(i, MyList.get(j));
+					MyList.set(j, Temp);
 				}
 			}
 		}
 
 		// DISPLAY THE LIST
-		System.out.println("The sorted list is: " + my_intlist);
+		System.out.println("The sorted list is: " + MyList);
 	}
 }

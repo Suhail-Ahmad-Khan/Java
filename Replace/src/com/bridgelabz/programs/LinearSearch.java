@@ -19,20 +19,19 @@ public class LinearSearch {
 
 		// INITIALIZATION
 		Utility u = new Utility();
-		ArrayList<String> my_list;
-		String str, filepath;
+		ArrayList<String> MyList;
+		String Input, FilePath;
 		System.out.print("Enter file path: ");
-		filepath = u.inputString();
+		FilePath = u.inputString();
 		System.out.print("Enter word to search: ");
-		str = u.inputString();
+		Input = u.inputString();
 
 		// COMPUTATION
-		my_list = u.read_file(filepath);
-		if (my_list.contains(str))
+		MyList = u.ReadFile(FilePath);
+		if (MyList.contains(Input))
 			System.out.print("String is FOUND");
 		else
 			System.out.print("String is NOT FOUND");
 
 	}
 }
-

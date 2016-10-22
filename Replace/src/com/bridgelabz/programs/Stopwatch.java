@@ -17,20 +17,20 @@ public class Stopwatch {
 
 		// INITIALIZATION
 		Utility u = new Utility();
-		int n, sum = 0;
-		double start, stop, elapsed;
+		int Input, Sum = 0;
+		double Start, Stop, Elapsed;
 		System.out.print("Enter value of n: ");
-		n = u.inputInteger();
+		Input = u.inputInteger();
 
 		// COMPUTATION
-		start = u.start_time();
-		for (int i = 1; i <= n; i++) {
-			sum = sum + i;
-			System.out.println("Sum: " + sum + " ");
+		Start = u.StartTime();
+		for (int i = 1; i <= Input; i++) {
+			Sum = Sum + i;
+			System.out.println("Sum: " + Sum + " ");
 		}
-		stop = u.stop_time();
-		elapsed = (stop - start) / 1000.0;
+		Stop = u.StopTime();
+		Elapsed = (Stop - Start) / 1000.0;
 		System.out.println("");
-		System.out.print("Total time elapsed during computation: " + elapsed);
+		System.out.print("Total time elapsed during computation: " + Elapsed);
 	}
 }

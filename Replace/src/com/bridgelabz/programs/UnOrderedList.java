@@ -20,29 +20,29 @@ import java.util.LinkedList;
 
 public class UnOrderedList {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 
 		// INITIALIZATION
 		Utility u = new Utility();
-		LinkedList<String> my_list = new LinkedList<String>();
-		String str, filepath;
+		LinkedList<String> MyList = new LinkedList<String>();
+		String Word, FilePath;
 		System.out.print("Enter file path: ");
-		filepath = u.inputString();
+		FilePath = u.inputString();
 		System.out.print("Enter word to search: ");
-		str = u.inputString();
+		Word = u.inputString();
 
 		// COMPUTATION
-		my_list = u.read_file1(filepath);
-		System.out.println(my_list.size());
-		if (my_list.contains(str)) {
-			my_list.remove(str);
-			System.out.println(my_list.size());
+		MyList = u.ReadFile1(FilePath);
+		System.out.println(MyList.size());
+		if (MyList.contains(Word)) {
+			MyList.remove(Word);
+			System.out.println(MyList.size());
 		} else {
-			my_list.add(str);
-			System.out.println(my_list.size());
+			MyList.add(Word);
+			System.out.println(MyList.size());
 		}
-		
-		//WRITING TO THE FILE
-		u.WriteFile(filepath, my_list);
+
+		// WRITING TO THE FILE
+		u.WriteFile(FilePath, MyList);
 	}
 }

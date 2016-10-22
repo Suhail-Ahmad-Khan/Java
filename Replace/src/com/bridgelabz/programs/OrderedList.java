@@ -1,9 +1,9 @@
 /*
  Ordered List
 a. Desc -> Read .a List of Numbers from a file and arrange it ascending Order in a
-   Linked List. Take user input for a number, if found then pop the number out of the
-   list else insert the number in appropriate position
-b. I/P -> Read from file the list of Numbers and take user input for a new number
+   Linked List. Take user input for a Number, if found then pop the Number out of the
+   list else insert the Number in appropriate position
+b. I/P -> Read from file the list of Numbers and take user input for a new Number
 c. Logic -> Create a Ordered Linked List having Numbers in ascending order.
 d. O/P -> The List of Numbers to a File.
  */
@@ -20,13 +20,13 @@ public class OrderedList {
 	public static void main(String[] args) throws IOException {
 
 		// INITIALIZATION
-		int num, pos, size, choice;
+		int Number, Position, Size, Choice;
 		Utility u = new Utility();
-		GenericLinkedList<Integer> my_list = new GenericLinkedList<Integer>();
-		String str, filepath;
+		GenericLinkedList<Integer> MyList = new GenericLinkedList<Integer>();
+		String Output, FilePath;
 		System.out.print("Enter file path: ");
-		filepath = u.inputString();
-		my_list.ReadFile(filepath);
+		FilePath = u.inputString();
+		MyList.ReadFile(FilePath);
 		while (true) {
 			System.out.println("");
 			System.out.println("*************** MENU ***************");
@@ -38,48 +38,48 @@ public class OrderedList {
 			System.out.println("6. Add at a position in a linked list");
 			System.out.println("7. Quit the program");
 			System.out.print("Enter your choice: ");
-			choice = u.inputInteger();
+			Choice = u.inputInteger();
 			System.out.println("");
-			switch (choice) {
+			switch (Choice) {
 
 			case 1:
 				System.out.print("Enter value to add in list: ");
-				num = u.inputInteger();
-				my_list.AddAtEnd(num);
-				my_list.WriteFile(filepath, my_list);
+				Number = u.inputInteger();
+				MyList.AddAtEnd(Number);
+				MyList.WriteFile(FilePath, MyList);
 				break;
 
 			case 2:
 				System.out.print("Enter value to remove from list: ");
-				num = u.inputInteger();
-				my_list.RemoveElement(num);
-				my_list.WriteFile(filepath, my_list);
+				Number = u.inputInteger();
+				MyList.RemoveElement(Number);
+				MyList.WriteFile(FilePath, MyList);
 				break;
 
 			case 3:
 				System.out.print("Enter value to search in list: ");
-				num = u.inputInteger();
-				str = my_list.ListSearch(num);
-				System.out.println(str);
+				Number = u.inputInteger();
+				Output = MyList.ListSearch(Number);
+				System.out.println(Output);
 				break;
 
 			case 4:
-				my_list.SortList(my_list);
-				my_list.WriteFile(filepath, my_list);
+				MyList.SortList(MyList);
+				MyList.WriteFile(FilePath, MyList);
 				break;
 
 			case 5:
-				size = my_list.size();
-				System.out.println("Size of link list: " + size);
+				Size = MyList.size();
+				System.out.println("Size of link list: " + Size);
 				break;
 
 			case 6:
 				System.out.print("Enter value to add in list: ");
-				num = u.inputInteger();
+				Number = u.inputInteger();
 				System.out.print("Enter position to insert: ");
-				pos = u.inputInteger();
-				my_list.AddAtPos(num, pos);
-				my_list.WriteFile(filepath, my_list);
+				Position = u.inputInteger();
+				MyList.AddAtPos(Number, Position);
+				MyList.WriteFile(FilePath, MyList);
 				break;
 
 			case 7:

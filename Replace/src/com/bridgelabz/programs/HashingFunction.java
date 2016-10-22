@@ -35,7 +35,7 @@ public class HashingFunction {
 
 		System.out.print("Enter file path to read from: ");
 		FilePath = u.inputString();
-		my_list = u.read_file(FilePath);
+		my_list = u.ReadFile(FilePath);
 
 		System.out.println(my_list);
 

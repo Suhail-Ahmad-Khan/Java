@@ -16,39 +16,39 @@ import com.bridgelabz.util.Utility;
 
 public class BinarySearch {
 
-	public static String binsearch(ArrayList<String> my_list, String str, int min, int max) {
-		String str1, str2;
-		str1 = "STRING FOUND";
-		str2 = "STRING NOT FOUND";
-		int mid = (max + min) / 2;
-		if (min > max)
-			return str2;
-		if (my_list.get(mid).equals(str)) {
-			return str1;
-		} else if (my_list.get(mid).compareTo(str) > 0) {
-			return binsearch(my_list, str, min, mid - 1);
+	public static String binarySearch(ArrayList<String> MyList, String Word, int MinValue, int MaxValue) {
+		String Output1, Output2;
+		Output1 = "STRING FOUND";
+		Output2 = "STRING NOT FOUND";
+		int MidValue = (MaxValue + MinValue) / 2;
+		if (MinValue > MaxValue)
+			return Output2;
+		if (MyList.get(MidValue).equals(Word)) {
+			return Output1;
+		} else if (MyList.get(MidValue).compareTo(Word) > 0) {
+			return binarySearch(MyList, Word, MinValue, MidValue - 1);
 		} else {
-			return binsearch(my_list, str, mid + 1, max);
+			return binarySearch(MyList, Word, MidValue + 1, MaxValue);
 		}
 	}
 
 	public static void main(String[] args) {
 
 		// INITIALIZATION
-		int min = 0, max;
+		int MinValue = 0, MaxValue;
 		Utility u = new Utility();
-		ArrayList<String> my_list;
-		String str, str1, filepath;
+		ArrayList<String> MyList;
+		String Word, Output, FilePath;
 		System.out.print("Enter file path: ");
-		filepath = u.inputString();
+		FilePath = u.inputString();
 		System.out.print("Enter word to search: ");
-		str = u.inputString();
+		Word = u.inputString();
 
 		// COMPUTATION
-		my_list = u.read_file(filepath);
-		max = my_list.size();
-		Collections.sort(my_list);
-		str1 = binsearch(my_list, str, min, max);
-		System.out.println(str1);
+		MyList = u.ReadFile(FilePath);
+		MaxValue = MyList.size();
+		Collections.sort(MyList);
+		Output = binarySearch(MyList, Word, MinValue, MaxValue);
+		System.out.println(Output);
 	}
 }

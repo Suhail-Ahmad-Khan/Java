@@ -32,7 +32,7 @@ public class BinarySearchInt {
 		double start, stop, elapsed;
 		String str1;
 		ArrayList<Integer> my_intlist = new ArrayList<Integer>();
-		start = u.start_time();
+		start = u.StartTime();
 		System.out.print("Enter size of list: ");
 		n = u.inputInteger();
 
@@ -52,7 +52,7 @@ public class BinarySearchInt {
 		max = my_intlist.size();
 		Collections.sort(my_intlist);
 		str1 = BINSI(my_intlist, num, min, max);
-		stop = u.stop_time();
+		stop = u.StopTime();
 		System.out.println(str1);
 		elapsed = (stop - start) / 1000.0;
 		System.out.println("Total time elapsed: " + elapsed);

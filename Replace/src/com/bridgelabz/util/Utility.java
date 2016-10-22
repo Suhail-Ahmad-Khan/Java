@@ -106,9 +106,9 @@ public class Utility {
 	}
 
 	// READING FROM A FILE AND RETURNING AN ARRAYLIST
-	public ArrayList<String> read_file(String filepath) {
+	public ArrayList<String> ReadFile(String FilePath) {
 		try {
-			s = new Scanner(new File(filepath));
+			s = new Scanner(new File(FilePath));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -121,7 +121,7 @@ public class Utility {
 	}
 
 	// READING FROM A FILE AND RETURNING A LINKEDLIST
-	public LinkedList<String> read_file1(String filepath) {
+	public LinkedList<String> ReadFile1(String filepath) {
 		try {
 			s = new Scanner(new File(filepath));
 		} catch (FileNotFoundException e) {
@@ -146,18 +146,18 @@ public class Utility {
 	}
 
 	// CALCULATING THE START AND STOP TIME FOR STOPWATCH TIMER
-	public double start_time() {
+	public double StartTime() {
 		start = System.currentTimeMillis();
 		return start;
 	}
 
-	public double stop_time() {
+	public double StopTime() {
 		stop = System.currentTimeMillis();
 		return stop;
 	}
 
 	// LINEAR SEARCH INTEGER
-	public String LSRI() {
+	public String LinearSearchInteger() {
 		int n;
 		String str1, str2;
 		str1 = "INTEGER FOUND";
@@ -191,7 +191,7 @@ public class Utility {
 	}
 
 	// LINEAR SEARCH STRING
-	public String LSRS() {
+	public String LinearSearchString() {
 		ArrayList<String> my_list;
 		String str, str1, str2, filepath;
 		str1 = "String is FOUND";
@@ -202,7 +202,7 @@ public class Utility {
 		str = inputString();
 
 		// COMPUTATION
-		my_list = read_file(filepath);
+		my_list = ReadFile(filepath);
 		if (my_list.contains(str))
 			return str1;
 		else
@@ -210,7 +210,7 @@ public class Utility {
 	}
 
 	// INSERTION SORT INTEGER
-	public void ISI() {
+	public void InsertionSortInteger() {
 		int n;
 
 		System.out.print("Enter the size of array: ");
@@ -249,7 +249,7 @@ public class Utility {
 	}
 
 	// INSERTION SORT STRING
-	public void ISS() {
+	public void InsertionSortString() {
 		int n;
 
 		System.out.print("Enter the size of array: ");
@@ -288,7 +288,7 @@ public class Utility {
 	}
 
 	// BUBBLE SORT FOR INTEGERS
-	public void BSI() {
+	public void BubbleSortInteger() {
 		// INITIALIZATION
 		int n;
 		ArrayList<Integer> my_intlist = new ArrayList<Integer>();
@@ -324,7 +324,7 @@ public class Utility {
 	}
 
 	// BUBBLE SORT FOR STRINGS
-	public void BSS() {
+	public void BubbleSortString() {
 
 		// INITIALIZATION
 		int n;
@@ -360,7 +360,7 @@ public class Utility {
 	}
 
 	// BINARY SEARCH INTEGER
-	public String BINSI(ArrayList<Integer> my_intlist, int num, int min, int max) {
+	public String BinarySearchInteger(ArrayList<Integer> my_intlist, int num, int min, int max) {
 		String str1, str2;
 		str1 = "INTEGER FOUND";
 		str2 = "INTEGER NOT FOUND";
@@ -370,14 +370,14 @@ public class Utility {
 		if (my_intlist.get(mid) == num) {
 			return str1;
 		} else if (my_intlist.get(mid) < num) {
-			return BINSI(my_intlist, num, min, mid - 1);
+			return BinarySearchInteger(my_intlist, num, min, mid - 1);
 		} else {
-			return BINSI(my_intlist, num, mid + 1, max);
+			return BinarySearchInteger(my_intlist, num, mid + 1, max);
 		}
 	}
 
 	// BINARY SEARCH STRING
-	public String BINSS(ArrayList<String> my_list, String str, int min, int max) {
+	public String BinarySearchString(ArrayList<String> my_list, String str, int min, int max) {
 		String str1, str2;
 		str1 = "STRING FOUND";
 		str2 = "STRING NOT FOUND";
@@ -387,9 +387,9 @@ public class Utility {
 		if (my_list.get(mid).equals(str)) {
 			return str1;
 		} else if (my_list.get(mid).compareTo(str) > 0) {
-			return BINSS(my_list, str, min, mid - 1);
+			return BinarySearchString(my_list, str, min, mid - 1);
 		} else {
-			return BINSS(my_list, str, mid + 1, max);
+			return BinarySearchString(my_list, str, mid + 1, max);
 		}
 	}
 }
