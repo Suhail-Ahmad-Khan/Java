@@ -34,6 +34,7 @@ public class JSONUtility {
 		m = u.inputInteger();
 
 		for (int j = 0; j < m; j++) {
+			JSONObject FoodData = new JSONObject();
 			JSONArray FoodDetails = new JSONArray();
 			System.out.print("Enter name of Foodgrain: ");
 			FoodName = u.inputString();
@@ -54,11 +55,13 @@ public class JSONUtility {
 				Food.put("Price per Kg:", Price);
 
 				FoodDetails.add(Food);
+				FoodData.put(FoodName, FoodDetails);
+				ProductDetails.add(FoodData);
 			}
-			ProductData.put(FoodName, FoodDetails);
+			// ProductData.put(FoodName, FoodData);
 		}
 
-		ProductDetails.add(ProductData);
+		
 		Inventory.put(InvName, ProductDetails);
 		WriteInJSONFile();
 	}
@@ -73,32 +76,28 @@ public class JSONUtility {
 			e.printStackTrace();
 		}
 	}
-
-	// READING FROM A FILE
-	@SuppressWarnings("unchecked")
-	public void ReadFromJSONFile() {
-		JSONParser parser = new JSONParser();
-
-		System.out.print("Enter file path: ");
-		filepath = u.inputString();
-
-		try {
-			Object obj = parser.parse(new FileReader(filepath));
-			JSONObject jsonObject = (JSONObject) obj;
-
-			// String name = (String) jsonObject.get("Name");
-			JSONArray companyList = (JSONArray) jsonObject.get("manage");
-
-			// System.out.println("Name: " + name);
-			System.out.println("\nRice Details:");
-			Iterator<String> iterator = companyList.iterator();
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next());
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 }
+
+/*
+ * // READING FROM A FILE
+ * 
+ * @SuppressWarnings("unchecked") public void ReadFromJSONFile() { JSONParser
+ * parser = new JSONParser();
+ * 
+ * System.out.print("Enter file path: "); filepath = u.inputString();
+ * 
+ * try { Object obj = parser.parse(new FileReader(filepath)); JSONObject
+ * Inventory = (JSONObject) obj;
+ * 
+ * JSONArray InvName = (JSONArray) Inventory.get("manager");
+ * 
+ * //JSONObject ProductName = (JSONObject) InvName;
+ * 
+ * for (int i = 0; i < ProductName.size(); i++) { JSONArray FoodName =
+ * (JSONArray) ProductName.get(""); JSONObject ProductDetails = (JSONObject)
+ * FoodName.get(i); String Name = (String) ProductDetails.get("Name: "); Double
+ * Weight = (Double) ProductDetails.get("Weight: "); Double PricePerKg =
+ * (Double) ProductDetails.get("Price Per Kg: "); System.out.println(Name + "\t"
+ * + Weight + "\t" + PricePerKg); } } catch (Exception e) { e.printStackTrace();
+ * } } }
+ */

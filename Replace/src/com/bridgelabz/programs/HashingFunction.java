@@ -29,60 +29,59 @@ public class HashingFunction {
 
 		// INITIALIZATION
 		Utility u = new Utility();
-		int n;
+		int Slots;
 		String FilePath = "";
-		ArrayList<String> my_list = new ArrayList<String>();
+		ArrayList<String> MyList = new ArrayList<String>();
 
 		System.out.print("Enter file path to read from: ");
 		FilePath = u.inputString();
-		my_list = u.ReadFile(FilePath);
+		MyList = u.ReadFile(FilePath);
 
-		System.out.println(my_list);
+		System.out.println(MyList);
 
 		System.out.print("Enter no. of slots: ");
-		n = u.inputInteger();
-		HashMap<Integer, LinkedList<Integer>> map1 = new HashMap<Integer, LinkedList<Integer>>();
-		HashMap<Integer, LinkedList<Integer>> map2 = new HashMap<Integer, LinkedList<Integer>>();
-		LinkedList<Integer>[] list = new LinkedList[n];
+		Slots = u.inputInteger();
+		HashMap<Integer, LinkedList<Integer>> Map1 = new HashMap<Integer, LinkedList<Integer>>();
+		HashMap<Integer, LinkedList<Integer>> Map2 = new HashMap<Integer, LinkedList<Integer>>();
+		LinkedList<Integer>[] List = new LinkedList[Slots];
 
 		// COMPUTATION
-		int val, num;
-		for (int i = 0; i < my_list.size(); i++) {
-			val = Integer.parseInt(my_list.get(i));
-			num = val % 11;
+		int Value, SlotNumber;
+		for (int i = 0; i < MyList.size(); i++) {
+			Value = Integer.parseInt(MyList.get(i));
+			SlotNumber = Value % 11;
 
-			if (list[num] == null) {
-				list[num] = new LinkedList<Integer>();
-				map1.put(num, list[num]);
+			if (List[SlotNumber] == null) {
+				List[SlotNumber] = new LinkedList<Integer>();
+				Map1.put(SlotNumber, List[SlotNumber]);
 			}
-			list[num].add(val);
+			List[SlotNumber].add(Value);
 		}
-		System.out.println("Hashmap1: " + map1);
+		System.out.println("Hashmap1: " + Map1);
 
-		for (int j = 0; j < n; j++) {
-			LinkedList<Integer> list1 = list[j];
-			for (int i = 0; i < list1.size() - 1; i++) {
-				for (int k = i + 1; k < list1.size(); k++) {
-					if (list1.get(i) == list1.get(k)) {
-						list1.remove(k);
+		for (int j = 0; j < Slots; j++) {
+			LinkedList<Integer> List1 = List[j];
+			for (int i = 0; i < List1.size() - 1; i++) {
+				for (int k = i + 1; k < List1.size(); k++) {
+					if (List1.get(i) == List1.get(k)) {
+						List1.remove(k);
 						--k;
 					} else
 						continue;
 				}
 			}
-			map2.put(j, list1);
+			Map2.put(j, List1);
 		}
 
 		// WRITING INTO A FILE
 		System.out.print("Enter filepath to write into: ");
 		FilePath = u.inputString();
 		FileWriter writer = new FileWriter(FilePath);
-		for (int i = 0; i < map2.size(); i++) {
-			writer.write(map2.get(i) + " ");
+		for (int i = 0; i < Map2.size(); i++) {
+			writer.write(Map2.get(i) + " ");
 			writer.flush();
 		}
 		writer.close();
-
-		System.out.println("Hashmap2: " + map2);
+		System.out.println("Hashmap2: " + Map2);
 	}
 }

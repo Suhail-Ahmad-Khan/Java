@@ -10,40 +10,40 @@ c. Logic -> Use Recursion and check for largest value of the Note to return chan
 d. O/P -> Two Outputs - one the number of minimum Note needed to give the
    change and second list of Rs Notes that would given in the Change 
  */
+
 package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Utility;
 
 public class VendingMachine {
-	static int FinalCnt = 0;
-	static int[] arr = new int[] { 1000, 500, 100, 50, 10, 5, 2, 1 };
-	static int[] cnt = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+	static int FinalCount = 0;
+	static int[] ArrayNotes = new int[] { 1000, 500, 100, 50, 10, 5, 2, 1 };
+	static int[] NotesCount = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-	public static int[] CalculateNotes(int num) {
-		if (num == 0)
-			return cnt;
-		for (int i = 0; i < arr.length; i++) {
-			cnt[i] = num / arr[i];
-			num = num % arr[i];
-			FinalCnt = FinalCnt + cnt[i];
-			if (num > arr[i])
+	public static int[] CalculateNotes(int Number) {
+		if (Number == 0)
+			return NotesCount;
+		for (int i = 0; i < ArrayNotes.length; i++) {
+			NotesCount[i] = Number / ArrayNotes[i];
+			Number = Number % ArrayNotes[i];
+			FinalCount = FinalCount + NotesCount[i];
+			if (Number > ArrayNotes[i])
 				--i;
 		}
-		return CalculateNotes(num);
+		return CalculateNotes(Number);
 	}
 
 	public static void main(String[] args) {
-		int num;
-		int[] my_cnt;
+		int Number;
+		int[] MyCount;
 		Utility u = new Utility();
 		System.out.print("Enter Number: ");
-		num = u.inputInteger();
-		my_cnt = CalculateNotes(num);
-		System.out.println("Minimum notes required: " + FinalCnt);
+		Number = u.inputInteger();
+		MyCount = CalculateNotes(Number);
+		System.out.println("Minimum notes required: " + FinalCount);
 
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i] + " : " + my_cnt[i]);
+		for (int i = 0; i < ArrayNotes.length; i++) {
+			System.out.println(ArrayNotes[i] + " : " + MyCount[i]);
 		}
-
 	}
 }

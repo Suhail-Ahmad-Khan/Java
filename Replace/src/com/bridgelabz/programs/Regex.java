@@ -28,28 +28,28 @@ public class Regex {
 	public static void main(String[] args) {
 
 		Utility u = new Utility();
-		ArrayList<String> my_list = new ArrayList<String>();
-		String str = "", filepath;
+		ArrayList<String> MyList = new ArrayList<String>();
+		String Input = "", FilePath;
 
 		System.out.print("Enter file path: ");
-		filepath = u.inputString();
-		my_list = u.read_file(filepath);
+		FilePath = u.inputString();
+		MyList = u.ReadFile(FilePath);
 
-		for (String s : my_list) {
-			str += s + " ";
+		for (String s : MyList) {
+			Input += s + " ";
 		}
-		System.out.println(str);
+		System.out.println(Input);
 
-		String firstName = "abc", phoneNumber;
+		String FirstName = "abc", PhoneNumber;
 		System.out.print("Enter Your Full Name: ");
-		String fullName = u.inputString();
+		String FullName = u.inputString();
 
 		// Taking name and checking the conditions
-		boolean checkName = Pattern.matches("[A-Z][a-zA-Z]*[\\s][A-Z][a-zA-Z]*", fullName);
+		boolean CheckName = Pattern.matches("[A-Z][a-zA-Z]*[\\s][A-Z][a-zA-Z]*", FullName);
 
-		if (checkName) {
-			String name[] = fullName.split(" ");
-			firstName = name[0];
+		if (CheckName) {
+			String name[] = FullName.split(" ");
+			FirstName = name[0];
 		} else {
 			System.out.println("Format is Wrong\nPlease Enter 'Abc Xyz' Format");
 			System.exit(0);
@@ -57,25 +57,24 @@ public class Regex {
 
 		// Taking Phone number and checking the conditions
 		System.out.print("Enter Mobile Number: ");
-		phoneNumber = u.inputString();
+		PhoneNumber = u.inputString();
 
-		boolean checkNumber = Pattern.matches("[789]{1}\\d{9}", phoneNumber);
+		boolean CheckNumber = Pattern.matches("[789]{1}\\d{9}", PhoneNumber);
 
-		if (!checkNumber) {
+		if (!CheckNumber) {
 			System.out.println("Number is incorrect");
 			System.exit(0);
 		}
 
 		// calculating current date
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		String date = dateFormat.format(new Date());
+		DateFormat DateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String Date = DateFormat.format(new Date());
 
-		str = str.replace("<<name>>", firstName);
-		str = str.replace("<<full name>>", fullName);
-		str = str.replace("xxxxxxxxxx", phoneNumber);
-		str = str.replace("01/01/2016", date);
+		Input = Input.replace("<<name>>", FirstName);
+		Input = Input.replace("<<full name>>", FullName);
+		Input = Input.replace("xxxxxxxxxx", PhoneNumber);
+		Input = Input.replace("01/01/2016", Date);
 
-		System.out.println(str);
-
+		System.out.println(Input);
 	}
 }
