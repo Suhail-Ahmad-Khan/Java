@@ -16,13 +16,39 @@ package com.bridgelabz.programs;
 import java.io.IOException;
 
 import com.bridgelabz.util.JSONUtility;
+import com.bridgelabz.util.Utility;
 
 public class InventoryManager {
 
 	public static void main(String[] args) throws IOException {
 
-		JSONUtility u = new JSONUtility();
-		u.CreateJSONFile();
-		// u.ReadFromJSONFile();
+		// INITIALIZATION
+		Utility u = new Utility();
+		JSONUtility ju = new JSONUtility();
+		int choice;
+		while (true) {
+			System.out.println("**********MENU**********");
+			System.out.println("1. Create a JSON File");
+			System.out.println("2. Read a JSON File");
+			System.out.println("3. Quit");
+			System.out.print("Enter your choice: ");
+			choice = u.inputInteger();
+			switch (choice) {
+			case 1:
+				ju.CreateJSONFile();
+				break;
+
+			case 2:
+				ju.ReadJSONFile();
+				break;
+
+			case 3:
+				return;
+
+			default:
+				System.out.println("Invalid choice");
+				break;
+			}
+		}
 	}
 }
