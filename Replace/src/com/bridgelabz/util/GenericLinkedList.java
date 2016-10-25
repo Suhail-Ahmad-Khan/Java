@@ -6,21 +6,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-class Node<T> {
-	
-	public Node<T> head;
-	public int size;
-	Scanner s;
+class Node1<T> {
 
 	private T item = null;
-	private Node<T> nextNode = null;
+	private Node1<T> nextNode = null;
 
-	public Node(T item, Node<T> nextNode) {
+	public Node1(T item, Node1<T> nextNode) {
 		this.item = item;
 		this.nextNode = nextNode;
 	}
 
-	public void setNext(Node<T> next) {
+	public void setNext(Node1<T> next) {
 		nextNode = next;
 	}
 
@@ -28,7 +24,7 @@ class Node<T> {
 		this.item = item;
 	}
 
-	public Node<T> getNext() {
+	public Node1<T> getNext() {
 		return nextNode;
 	}
 
@@ -38,6 +34,10 @@ class Node<T> {
 }
 
 public class GenericLinkedList<T> {
+
+	public Node1<T> head;
+	public int size;
+	Scanner s;
 
 	// CREATING CONSTRUCTOR
 	public GenericLinkedList() {
@@ -69,20 +69,20 @@ public class GenericLinkedList<T> {
 	// ADDING AT THE END IN THE LINKED LIST
 	public void AddAtEnd(T value) {
 		if (head == null) {
-			head = new Node<T>(value, null);
+			head = new Node1<T>(value, null);
 		} else {
-			Node<T> node = head;
+			Node1<T> node = head;
 			while (node.getNext() != null) {
 				node = node.getNext();
 			}
-			node.setNext(new Node<T>(value, null));
+			node.setNext(new Node1<T>(value, null));
 		}
 		size++;
 	}
 
 	// ADDING AT A SPECIFIED POSITION IN LINKED LIST
 	public void AddAtPos(T value, int pos) {
-		Node<T> node = head;
+		Node1<T> node = head;
 
 		if ((pos < 1) || (pos > size)) {
 			System.out.println("Invalid value of position");
@@ -91,14 +91,14 @@ public class GenericLinkedList<T> {
 		for (int i = 1; i < pos - 1; i++)
 			node = node.getNext();
 
-		node.setNext(new Node<T>(value, node.getNext()));
+		node.setNext(new Node1<T>(value, node.getNext()));
 		size++;
 	}
 
 	// WRITING FROM GENERIC LINKED LIST INTO THE FILE
 	public void WriteFile(String filepath, GenericLinkedList<T> my_list) throws IOException {
 		FileWriter writer = new FileWriter(filepath);
-		Node<T> node = head;
+		Node1<T> node = head;
 		while (node != null) {
 			writer.write(node.getValue() + " ");
 			node = node.getNext();
@@ -113,7 +113,7 @@ public class GenericLinkedList<T> {
 		str = "LIST IS EMPTY";
 		str1 = "DATA FOUND";
 		str2 = "DATA NOT FOUND";
-		Node<T> node = head;
+		Node1<T> node = head;
 
 		if (node == null) {
 			return str;
@@ -129,7 +129,7 @@ public class GenericLinkedList<T> {
 
 	// REMOVING ELEMENT FROM LINKED LIST
 	public void RemoveElement(T value) {
-		Node<T> node = head;
+		Node1<T> node = head;
 		while (node != null) {
 			if ((Integer) value == Integer.parseInt((String) node.getNext().getValue())) {
 				node.setNext(node.getNext().getNext());
@@ -143,7 +143,7 @@ public class GenericLinkedList<T> {
 	// SORTING A LINKED LIST
 	public void SortList(GenericLinkedList<T> list) {
 
-		Node<T> node = head;
+		Node1<T> node = head;
 		T swap;
 
 		for (int i = 0; i < size - 1; i++) {
