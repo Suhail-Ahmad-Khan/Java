@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class Node<T> {
+	
+	public Node<T> head;
+	public int size;
+	Scanner s;
 
 	private T item = null;
 	private Node<T> nextNode = null;
@@ -34,10 +38,6 @@ class Node<T> {
 }
 
 public class GenericLinkedList<T> {
-
-	public Node<T> head;
-	public int size;
-	Scanner s;
 
 	// CREATING CONSTRUCTOR
 	public GenericLinkedList() {

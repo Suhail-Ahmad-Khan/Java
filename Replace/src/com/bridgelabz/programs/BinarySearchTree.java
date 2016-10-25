@@ -11,28 +11,64 @@ public class BinarySearchTree {
 
 	public static void main(String[] args) {
 
+		int choice, data;
+		long result;
+		int count = 0;
+		boolean x;
+		Utility u = new Utility();
 		BinarySearchUtility b = new BinarySearchUtility();
-		b.insert(3);
-		b.insert(8);
-		b.insert(1);
-		b.insert(4);
-		b.insert(6);
-		b.insert(2);
-		b.insert(10);
-		b.insert(9);
-		b.insert(20);
-		b.insert(25);
-		b.insert(15);
-		b.insert(16);
-		System.out.println("Original Tree : ");
-		b.display(b.root);
-		System.out.println("");
-		System.out.println("Check whether Node with value 4 exists : " + b.find(4));
-		System.out.println("Delete Node with no children (2) : " + b.delete(2));
-		b.display(b.root);
-		System.out.println("\n Delete Node with one child (4) : " + b.delete(4));
-		b.display(b.root);
-		System.out.println("\n Delete Node with Two children (10) : " + b.delete(10));
-		b.display(b.root);
+		while (true) {
+			System.out.println("*************** MENU ***************");
+			System.out.println("1. Insert in a Binary Search Tree");
+			System.out.println("2. Display the Binary Search Tree");
+			System.out.println("3. Count the number of BST possible");
+			System.out.println("4. Search in a Binary Search Tree");
+			System.out.println("5. Delete from Binary Search Tree");
+			System.out.println("6. Quit ");
+			System.out.print("Enter your choice: ");
+			choice = u.inputInteger();
+			switch (choice) {
+
+			case 1:
+				System.out.print("Enter data you want to insert: ");
+				data = u.inputInteger();
+				b.Insert(data);
+				count++;
+				break;
+
+			case 2:
+				System.out.println("The Original Tree: ");
+				b.Display(b.root);
+				System.out.println("");
+				break;
+
+			case 3:
+				System.out.println("No. of elements in BST tree: " + count);
+				result = b.Count(count);
+				System.out.println("The Count is: " + result);
+				break;
+
+			case 4:
+				System.out.print("Enter data you want to search: ");
+				data = u.inputInteger();
+				x = b.Search(data);
+				System.out.println("Data Found: " + x);
+				break;
+
+			case 5:
+				System.out.print("Enter data you want to delete: ");
+				data = u.inputInteger();
+				b.Delete(data);
+				count--;
+				break;
+
+			case 6:
+				System.out.println("Program Terminated");
+				return;
+
+			default:
+				System.out.println("Invalid number of arguments");
+			}
+		}
 	}
 }
