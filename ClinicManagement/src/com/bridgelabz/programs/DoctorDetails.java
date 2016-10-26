@@ -10,10 +10,11 @@ public class DoctorDetails {
 	String name, specialization, availability;
 	int id;
 
+	// DEFAULT CONSTRUCTOR
 	public DoctorDetails() {
 	}
 
-	// Parameterized constructor
+	// PARAMETERIZED CONSTRUCTOR
 	public DoctorDetails(String name, int id, String specialization, String availability) {
 		this.name = name;
 		this.id = id;
@@ -21,7 +22,7 @@ public class DoctorDetails {
 		this.availability = availability;
 	}
 
-	// displaying info for single doctor
+	// DISPLAY DOCTOR DETAILS
 	public void printDoctor(DoctorDetails d) {
 		System.out.println("Name : " + d.name);
 		System.out.println("ID : " + d.id);
@@ -29,7 +30,7 @@ public class DoctorDetails {
 		System.out.println("Availability : " + d.availability + "\n");
 	}
 
-	// Displaying List of Doctors
+	// DISPLAY LIST OF DOCTORS
 	public void listOfDoctors(ArrayList<DoctorDetails> doctors) {
 		for (DoctorDetails info : doctors) {
 			System.out.println("Name : " + info.name);
@@ -39,9 +40,12 @@ public class DoctorDetails {
 		}
 	}
 
-	// search method for Doctor
+	// SEARCHING FOR A DOCTOR
 	public void searchDoctor(ArrayList<DoctorDetails> doctors) {
-		System.out.println("1.Name\n2.ID\n3.Specilization\n4.Availability");
+		System.out.println("1. Name");
+		System.out.println("2. ID");
+		System.out.println("3. Specilization");
+		System.out.println("4. Availability");
 		int choice = u.inputInteger();
 		switch (choice) {
 		case 1: {
@@ -71,10 +75,10 @@ public class DoctorDetails {
 		default: {
 			System.out.println("Entered Wrong Choice");
 		}
-		}// end of switch
-	}// end of searchDoctor
+		}
+	}
 
-	// search by name
+	// SEARCHING BY NAME
 	public void searchByName(ArrayList<DoctorDetails> doctors, String name) {
 		int count = 0;
 		for (DoctorDetails doctor : doctors) {
@@ -87,7 +91,7 @@ public class DoctorDetails {
 			System.out.println("Sorry Doctor for given name not found");
 	}
 
-	// searching doctor by id
+	// SEARCING BY ID
 	public void searchById(ArrayList<DoctorDetails> doctors, int id) {
 		int count = 0;
 		for (DoctorDetails doctor : doctors) {
@@ -101,7 +105,7 @@ public class DoctorDetails {
 
 	}
 
-	// searching Doctor by specialization
+	// SEARCHING BY SPECIALIZATION
 	public void searchBySpecilization(ArrayList<DoctorDetails> doctors, String specialization) {
 		int count = 0;
 		for (DoctorDetails doctor : doctors) {
@@ -114,7 +118,7 @@ public class DoctorDetails {
 			System.out.println("Sorry Doctor for given specialization not found");
 	}
 
-	// searching Doctor by availability
+	// SEARCHING BY AVAILABILITY
 	public void searchByAvailability(ArrayList<DoctorDetails> doctors, String availability) {
 		int count = 0;
 		for (DoctorDetails doctor : doctors) {
@@ -127,7 +131,7 @@ public class DoctorDetails {
 			System.out.println("Sorry Doctor for given availability not found");
 	}
 
-	// To search popular doctor
+	// SEARCHING A POPULAR DOCTOR
 	public void popularDoctor(ArrayList<DoctorDetails> doctors) {
 		Random r = new Random();
 		int num = r.nextInt(5);

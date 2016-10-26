@@ -32,10 +32,10 @@ public class ClinicManagement {
 
 		// CREATING LIST OF PATIENTS
 		PatientDetails patient1 = new PatientDetails("Mr. Kamble", patientId, "9087645342", 28);
-		PatientDetails patient2 = new PatientDetails("Ms. Pande", patientId, "8456985426", 22);
-		PatientDetails patient3 = new PatientDetails("Mrs. Chadha", patientId, "7545865412", 56);
+		PatientDetails patient2 = new PatientDetails("Mr. Pande", patientId, "8456985426", 22);
+		PatientDetails patient3 = new PatientDetails("Ms. Chadha", patientId, "7545865412", 56);
 		PatientDetails patient4 = new PatientDetails("Mr. Patil", patientId, "9846541320", 79);
-		PatientDetails patient5 = new PatientDetails("Ms. Jadhav", patientId, "9945653287", 45);
+		PatientDetails patient5 = new PatientDetails("Mrs. Jadhav", patientId, "9945653287", 45);
 		PatientDetails patient6 = new PatientDetails("Mr. Kavedia", patientId, "8451623084", 39);
 
 		// ADDING THE LIST TO ARRAYLIST
@@ -96,7 +96,7 @@ public class ClinicManagement {
 
 				System.out.print("Please enter Doctors id: ");
 				int docId = u.inputInteger();
-				appointment.takeAppoinment(newPatient, docId);
+				appointment.takeAppointment(newPatient, docId);
 				break;
 
 			case 6:
@@ -112,10 +112,10 @@ public class ClinicManagement {
 				return;
 
 			default:
-				System.out.println("Wrong Choice!!");
+				System.out.println("Invalid Arguments.");
 				break;
-				
-			}// end of switch
-		} // end of while
+
+			}
+		}
 	}
 }
