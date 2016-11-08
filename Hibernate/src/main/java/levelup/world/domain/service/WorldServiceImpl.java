@@ -1,10 +1,8 @@
 package levelup.world.domain.service;
 
 import java.util.Collection;
-
 import levelup.world.dao.CountryDao;
 import levelup.world.domain.Country;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

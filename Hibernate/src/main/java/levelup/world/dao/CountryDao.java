@@ -1,7 +1,6 @@
 package levelup.world.dao;
 
 import java.util.Collection;
-
 import levelup.world.domain.Country;
 
 public interface CountryDao {

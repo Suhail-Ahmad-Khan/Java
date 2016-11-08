@@ -18,7 +18,7 @@
 		<table>
 			<tr>
 				<td align="right" valign="bottom"><c:choose>
-						<c:when test="${country.new}">
+						<c:when test="${country['new']}">
 							<button type="submit" name="create">Create</button>
 						</c:when>
 						<c:otherwise>
