@@ -1,16 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="
-http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
-http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd   
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Auto-detect components -->
-	<context:component-scan base-package="levelup.world.domain" />
 
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.ipl.controller"></context:component-scan>
+
+	<!-- Configure JDBC Connection -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/hiobernate" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+
+	<!-- Configure Postgres Connection -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
+		name="url" value="jdbc:postgresql:User" /> <property name="username" value="postgres" 
+		/> <property name="password" value="postgres" /> <property name="url" value="jdbc:postgresql://ec2-54-75-230-128.eu-west-1.compute.amazonaws.com:5432/ddnbpnk338fctm?username=dhcndijioxcbdp&amp;password=JrOiIlr0Dz4mH7p9MEpQpcdAbs&amp;ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory" 
+		/> <property name="username" value="dhcndijioxcbdp" /> <property name="password" 
+		value="JrOiIlr0Dz4mH7p9MEpQpcdAbs" /> </bean> -->
+		
+	<!-- Configure Hibernate 4 Session Factory Mysql -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>levelup.world.domain.country</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Configure Hibernate 4 Session Facotry Postgres -->
+	<!-- <bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.ipl.model.UserTable</value>
+			</list>
+		</property>
+	</bean> -->
+
+	<!-- class beans -->
+	<bean id="loginDao" class="com.ipl.dao.IplDaoImpl"></bean>
+
+	<!-- Controller beans -->
+	<!-- <bean id="abc" class="com.sample.controller.SampleController"></bean> -->
 </beans>
