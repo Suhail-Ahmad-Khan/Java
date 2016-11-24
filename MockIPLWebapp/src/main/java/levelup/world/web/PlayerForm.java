@@ -40,19 +40,12 @@ public class PlayerForm {
 		dataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
 
-	/*
-	 * @RequestMapping(method = RequestMethod.GET) public Player
-	 * setUpForm(@RequestParam(value = "id", required = false) Integer playerId)
-	 * { if (playerId == null) { return new Player(); } else { return
-	 * playerService.getPlayerById(playerId); } }
-	 */
-
 	@RequestMapping(method = RequestMethod.GET)
 	public Player setUpForm(@RequestParam(value = "id", required = false) Integer playerId) {
 		if (playerId == null) {
 			return new Player();
 		} else {
-			return playerService.getPlayerByTeamId(playerId);
+			return playerService.getPlayerById(playerId);
 		}
 	}
 
